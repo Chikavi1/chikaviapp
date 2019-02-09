@@ -1,0 +1,7 @@
+{
+  "name": "chikavi",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
