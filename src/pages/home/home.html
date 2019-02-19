@@ -1,13 +1,13 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="fondo-cut">
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Home</ion-title>
+    <ion-title></ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content class="card-background-page" >
+<ion-content class="card-background-page " style="background: #17202f;" >
  
 
   <!--<button ion-button
@@ -18,11 +18,15 @@
 
 <!--<ion-searchbar animated debounce="500" (ionInput)="getItems($event)" placeholder="busca algo como 'tacos'"></ion-searchbar>
 -->
-
-  <ion-card *ngFor="let item of items ">
-    <img src="{{item.img}}"/>
-    <div class="card-title">{{ item.nombre }}</div>
-    <div class="card-subtitle"></div>
+<ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <h1 text-center class="text-white" >Inicio</h1>
+ <ion-card *ngFor="let pelicula of peliculas"
+  (click)="irPagina(pelicula)">
+    <img src="{{pelicula.imagen}}"/>
+    <div class="card-title">{{pelicula.nombre}}</div>
+    <div class="card-subtitle">{{pelicula.year}}</div>
   </ion-card>
 
      

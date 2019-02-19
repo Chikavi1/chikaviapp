@@ -4,20 +4,33 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 import { ToastController } from 'ionic-angular';
 import { OBJETOS } from '../../data/data.objetos';
 
+import { ProductPage } from '../product/product';
+import { HomeProvider } from '../../providers/home/home';
+import { AlertController } from 'ionic-angular';
+
 
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
 export class HomePage {
-	objetos:any[] = [];
-texto = "resultado";
-items: any;
+  texto = "resultado";
+  items: any;
+  products :any[];
+  peliculas :any[];
+
+
   constructor(public navCtrl: NavController,
 		  	private barcodeScanner: BarcodeScanner,
-		  	private toastCtrl: ToastController) {
-  	this.objetos = OBJETOS.slice(0);
-  	 this.initializeItems();
+		  	private toastCtrl: ToastController,
+        public Home: HomeProvider,
+        public alertCtrl: AlertController){
+  	//7this.objetos = OBJETOS.slice(0);
+  	 //this.initializeItems();
+     this.Home.index().subscribe(
+       (data) => {this.peliculas = data,console.log(data)},
+       (error) =>{console.log(error)}
+       );
   }
 
   scan(){
@@ -62,4 +75,36 @@ mostrarError( mensaje : string ){
 	 toast.present();
 
 }
+navOptions = {
+  animation: 'md-transition',
+  duration: 1500
+};
+irPagina(item){
+  this.navCtrl.push(ProductPage,{item :item},this.navOptions);
+}
+
+ showAlert(error) {
+    const alert = this.alertCtrl.create({
+      title: "tenemos un error",
+      subTitle: error.message,
+      buttons: ['Entendido']
+    });
+    alert.present();
+  }
+
+
+doRefresh(refresher) {
+    console.log('Begin async operation', refresher);
+
+    setTimeout(() => {
+      this.Home.index().subscribe(
+      (data) => {this.peliculas = data},
+      (error) => {this.showAlert(error)}
+      //console.log(data)
+      
+      );
+            refresher.complete();
+    }, 2000);
+  }
+
 }

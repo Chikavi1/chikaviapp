@@ -1,6 +1,5 @@
 export const OBJETOS = [
 {
-	codigobarra: "7501",
 	img: "https://placeralplato.com/files/2016/01/Pizza-con-pepperoni.jpg",
 	cantidad: 1,
 	departamento: "comida",
@@ -10,17 +9,15 @@ export const OBJETOS = [
 	descripcion: "loremsdad asdas dsa da 3 ewqdeasda asdasdgdf asdasda"
 },
 {
-	codigobarra: "123a",
-	img: "https://cdn-3.expansion.mx/dims4/default/f891dc2/2147483647/strip/true/crop/1254x837+0+0/resize/800x534!/quality/90/?url=https%3A%2F%2Fcherry-brightspot.s3.amazonaws.com%2Ff6%2Fe3%2F6925673440018c64171304d0bf70%2Fistock-520704188.jpg",
+	img: "https://static1.laverdad.es/www/multimedia/201809/20/media/cortadas/VF12ODN1-k2jF-U60980393071l0E-624x385@La%20Verdad.jpg",
 	cantidad: 2,
 	departamento: "comida",
-	nombre: "Cervezas",
+	nombre: "bebidas alcoholicas",
 	costo: 123,
 	precio: 130,
 	descripcion: "loremsdad asdas dsa da 3 ewqdeasda asdasdgdf asdasda"
 },
 {
-	codigobarra: "75012",
 	img: "http://cdn2.cocinadelirante.com/sites/default/files/styles/gallerie/public/images/2018/01/ensalada11.jpg",
 	cantidad: 3,
 	departamento: "comida",
@@ -30,31 +27,28 @@ export const OBJETOS = [
 	descripcion: "2"
 },
 {
-	codigobarra: "750123",
-	img: "https://placeralplato.com/files/2016/01/Pizza-con-pepperoni.jpg",
+	img: "https://www.laespanolaaceites.com/blog/wp-content/uploads/2017/08/Bebidas-verano-general.jpg",
 	cantidad: 4,
 	departamento: "comida",
-	nombre: "refresco",
+	nombre: "bebidas",
 	costo: 123,
 	precio: 130,
 	descripcion: "4"
 },
 {
-	codigobarra: "7501234",
-	img: "https://placeralplato.com/files/2016/01/Pizza-con-pepperoni.jpg",
+	img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsBTuBaiNk3QFBTJ9Usdo2sjuZm1w16SnfrAxYamuG_Q947Ul4mA",
 	cantidad: 5,
 	departamento: "comida",
-	nombre: "carnita",
+	nombre: "paquetes",
 	costo: 123,
 	precio: 130,
 	descripcion: "loremsdad asdas dsa da 3 ewqdeasda asdasdgdf asdasda"
 },
 {
-	codigobarra: "75012345",
-	img: "https://placeralplato.com/files/2016/01/Pizza-con-pepperoni.jpg",
+	img: "https://cuponassets.cuponatic-latam.com/backendMx/uploads/imagenes_descuentos/58793/80bb77cf7f633bb28695ec09ef4cd6f896a1cce2.S.jpg",
 	cantidad: 6,
 	departamento: "comida",
-	nombre: "pizza",
+	nombre: "alitas",
 	costo: 123,
 	precio: 130,
 	descripcion: "loremsdad asdas dsa da 3 ewqdeasda asdasdgdf asdasda"
