@@ -6,7 +6,7 @@ import { timer } from 'rxjs/observable/timer';
 
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
-
+import { EstadisticasPage } from '../pages/estadisticas/estadisticas';
 @Component({
   templateUrl: 'app.html'
 })
@@ -23,7 +23,8 @@ export class MyApp {
     // used for an example of ngFor and navigation
     this.pages = [
       { title: 'Inicio', component: HomePage },
-      { title: 'Pedidos', component: ListPage }
+      { title: 'Pedidos', component: ListPage },
+      { title: 'Estadisticas', component: EstadisticasPage}
     ];
 
   }
@@ -32,7 +33,7 @@ export class MyApp {
     this.platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
-      this.statusBar.styleDefault();
+      this.statusBar.backgroundColorByHexString('#17202f');
       this.splashScreen.hide();
       timer(4000).subscribe(() => this.showSplash = false);
     });
