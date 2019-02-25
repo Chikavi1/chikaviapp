@@ -14,9 +14,10 @@ export class HomeProvider {
   }
 
 
-  baseUrl:string = "http://127.0.0.1:8000/api/categories";
+  baseUrl:string = "http://127.0.0.1:8000/api/";
 
   index():any{
-  	return this.http.get(this.baseUrl);
+  	return this.http.get(this.baseUrl+"categories");
   }
+ 
 }
