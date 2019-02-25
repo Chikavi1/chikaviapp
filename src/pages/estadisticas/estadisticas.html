@@ -6,37 +6,20 @@
 -->
 <ion-header >
     <ion-navbar  color="fondo-cut">
-    	<button ion-button menuToggle>
+    <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title text-center>estadisticas</ion-title>
+    <ion-title >estadisticas</ion-title>
   </ion-navbar>
 </ion-header>
-<ion-content style="background: #17202f;">
-
-	<ion-card style="background: #982649;">
-		<ion-card-header >
-			<h1 text-center style="color: white;">Total ventas</h1>
-	  	</ion-card-header>
-
-	  <ion-card-content>
-	  		<h1 text-center style="color:white;">530</h1>
-	  </ion-card-content>
-	</ion-card>
-
-
-	<ion-card style="background: #296ea0;">
-		<ion-card-header >
-			<h1 text-center style="color: white;">Total Productos</h1>
-	  	</ion-card-header>
-
-	  <ion-card-content>
-	  		<h1 text-center style="color:white;">65</h1>
-	  </ion-card-content>
-	</ion-card>
-
-		<ion-card-header >
-			<h1 text-center style="color: white;">Detalles en productos</h1>
+<ion-content style="background: #17202f;" >
+<ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+	<div *ngFor="let dat of datos">
+		
+	<ion-card-header >
+			<h1 text-center style="color: white;">Mas vendidos</h1>
 	  	</ion-card-header>
 
 	  <ion-card-content>
@@ -52,5 +35,29 @@
 
 
 	  </ion-card-content>
+
+	<ion-card style="background: #982649;">
+		<ion-card-header >
+			<h1 text-center style="color: white;">Total ventas</h1>
+	  	</ion-card-header>
+
+	  <ion-card-content >
+	  		<h1 text-center style="color:white;">{{ dat.ventas }}</h1>
+	  </ion-card-content>
+	</ion-card>
+
+
+	<ion-card style="background: #296ea0;">
+		<ion-card-header >
+			<h1 text-center style="color: white;">Total Productos</h1>
+	  	</ion-card-header>
+
+	  <ion-card-content>
+	  		<h1 text-center style="color:white;">{{ dat.productos }}</h1>
+	  </ion-card-content>
+	</ion-card>
+
+		
+	</div>
   
 </ion-content>
