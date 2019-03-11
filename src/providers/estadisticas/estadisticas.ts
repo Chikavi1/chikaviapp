@@ -14,7 +14,7 @@ export class EstadisticasProvider {
     console.log('Hello EstadisticasProvider Provider');
   }
 
-  baseUrl:string = "http://127.0.0.1:8000/api/";
+  baseUrl:string = "https://www.chikavi.com/api/";
 
   index():any{
   	return this.http.get(this.baseUrl+"estadisticas");
