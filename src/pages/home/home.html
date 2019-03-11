@@ -7,7 +7,7 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content class="card-background-page " style="background: #17202f;" >
+<ion-content class="card-background-page "  >
  
 
   <!--<button ion-button
@@ -24,7 +24,7 @@
   <h1 text-center class="text-white" >Inicio</h1>
  <ion-card *ngFor="let pelicula of peliculas"
   (click)="irPagina(pelicula)">
-    <img src="{{pelicula.imagen}}"/>
+    <img src="https://www.chikavi.com/{{pelicula.imagen}}"/>
     <div class="card-title">{{pelicula.nombre}}</div>
     <div class="card-subtitle">{{pelicula.year}}</div>
   </ion-card>

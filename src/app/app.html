@@ -5,15 +5,15 @@
   </div>
 </div>
 <ion-menu [content]="content">
-  <ion-header>
-    <ion-toolbar>
+  <ion-header >
+    <ion-toolbar color="fondo-cut">
       <ion-title>Menu</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <ion-content>
-    <ion-list>
-      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
+  <ion-content style="background: #17202f;">
+    <ion-list style="background: #17202f;">
+      <button style="background: #17202f;color:white;"  menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
         {{p.title}}
       </button>
     </ion-list>

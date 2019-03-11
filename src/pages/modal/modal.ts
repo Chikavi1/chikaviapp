@@ -24,7 +24,7 @@ export class ModalPage {
   cerrar_con_parametros(){
 
   	let data = {
-  		folio: 123,
+  		folio: 456,
   		cantidad: this.inputValue1,
   		mesa: this.numeroMesa,
   		status: 0,
