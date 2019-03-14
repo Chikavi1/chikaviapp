@@ -14,7 +14,7 @@ export class HomeProvider {
   }
 
 
-  baseUrl:string = "https://www.chikavi.com/api/";
+  baseUrl:string = "http://127.0.0.1:8000/api/";
 
   index():any{
   	return this.http.get(this.baseUrl+"categories");

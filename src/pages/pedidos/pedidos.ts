@@ -28,18 +28,7 @@ export class PedidosPage {
              public alertCtrl: AlertController) {
     this.mesa = this.navParams.get("mesa");
     this.nmesa = this.mesa.id;
-    console.log(this.nmesa);
-    this.data = {
-      "folio":"1234",
-      "cantidad":"3",
-      "mesa": this.nmesa,
-      "status": 0,
-      "vendedor":"luis rojas",
-      "nombre":"pizza",
-      "products_id":1,
-      "precio":"220"
-  }
-  console.log(this.data);
+
 
 
    	 this.Pedidos.index(this.nmesa).subscribe(

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { ProductsProvider } from '../../providers/products/products';
 /**
  * Generated class for the ProductPage page.
  *
@@ -15,11 +15,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class ProductPage {
 
-	pelicula:any = {};
+	productos= [];
 	numero = 0;
+  name:any = {};
+  constructor(public navCtrl: NavController, public navParams: NavParams,private products: ProductsProvider) {
+  	  	this.name = this.navParams.get("item");
+        this.products.bycategory(this.name.nombre).subscribe(
+       (data) => {this.productos = data},
+       (error) =>{console.log(error)}
+       );
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  	  	this.pelicula = this.navParams.get("item");
   }
 
   ionViewDidLoad() {

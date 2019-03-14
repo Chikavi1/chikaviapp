@@ -14,7 +14,7 @@ export class PedidosProvider {
   constructor(public http: HttpClient) {
   }
 datos;
-baseUrl:string = "https://www.chikavi.com/api/";
+baseUrl:string = "http://127.0.0.1:8000/api/";
 
   index(mesa):any{
   	return this.http.get(this.baseUrl+"ventasmesa?mesa="+mesa);

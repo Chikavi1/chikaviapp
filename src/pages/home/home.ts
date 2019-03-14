@@ -16,8 +16,8 @@ import { AlertController } from 'ionic-angular';
 export class HomePage {
   texto = "resultado";
   items: any;
+
   products :any[];
-  peliculas :any[];
 
 
   constructor(public navCtrl: NavController,
@@ -28,7 +28,7 @@ export class HomePage {
   	//7this.objetos = OBJETOS.slice(0);
   	 //this.initializeItems();
      this.Home.index().subscribe(
-       (data) => {this.peliculas = data,console.log(data)},
+       (data) => {this.products = data,console.log(data)},
        (error) =>{console.log(error)}
        );
   }
@@ -98,7 +98,7 @@ doRefresh(refresher) {
 
     setTimeout(() => {
       this.Home.index().subscribe(
-      (data) => {this.peliculas = data},
+      (data) => {this.products = data},
       (error) => {this.showAlert(error)}
       //console.log(data)
       

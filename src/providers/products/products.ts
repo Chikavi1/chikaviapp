@@ -9,11 +9,14 @@ import { Injectable } from '@angular/core';
 */
 @Injectable()
 export class ProductsProvider {
-baseUrl:string = "https://www.chikavi.com/api/";
+baseUrl:string = "http://127.0.0.1:8000/api/";
   constructor(public http: HttpClient) {
   }
  index():any{
   	return this.http.get(this.baseUrl+"products");
+  }
+  bycategory(category):any{
+  	return this.http.get(this.baseUrl+"productosCategoria?categoria="+category);
   }
 }
 
