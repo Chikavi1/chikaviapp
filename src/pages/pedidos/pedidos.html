@@ -14,7 +14,6 @@
 </ion-header>
 
 <ion-content padding>
-	<button ion-button block (click)="mostrar_modal()" >Agregar Producto</button>
 <ion-refresher (ionRefresh)="doRefresh($event)">
     <ion-refresher-content></ion-refresher-content>
   </ion-refresher>
@@ -25,14 +24,14 @@
     
   
 
-    <ion-item >
+    <ion-item style="background: #17202f;color:white;border: 2px solid white;">
       <ion-grid>
         <ion-row>
           <ion-col>
              <h2 items-start>{{pedido.cantidad}}</h2>
           </ion-col>
           <ion-col>
-           <h2 items-center>{{pedido.nombre}}</h2>
+           <h2 items-center class="wrap-text">{{pedido.nombre}}</h2>
           </ion-col>
           <ion-col>
             <h2 items-end style="color:green">${{pedido.precio}}</h2>
@@ -62,18 +61,26 @@
 
 <ion-footer no-shadow >
   <ion-toolbar position="bottom" color="fondo-cut">
+     <ion-row>
+      <ion-col col-12>
+       <h2 text-right style="color:green">Total: 1220</h2>
+      </ion-col>
+    </ion-row>
+
    <ion-row>
-  <ion-col col-6> 
-    <button ion-button color="secondary" class="my-width" large >
-      <b>Finalizar</b>
+     <ion-col col-6>
+    <button ion-button color="danger" class="my-width" large (click)="alerta()">
+      <b>Cancelar</b>
     </button>
   </ion-col>
 
-  <ion-col col-6>
-    <button ion-button color="danger" class="my-width" large>
-      <b>Cancelar mesa</b>
+  <ion-col col-6> 
+    <button ion-button color="secondary" class="my-width" large (click)="mostrar_modal()"  >
+      <b>Agregar</b>
     </button>
   </ion-col>
+
+ 
 </ion-row>
   </ion-toolbar>
 </ion-footer>

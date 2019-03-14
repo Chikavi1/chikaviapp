@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import {  NavController, NavParams, ModalController } from 'ionic-angular';
 import { PedidosProvider } from '../../providers/pedidos/pedidos';
 import { ModalPage } from '../modal/modal';
-	
+import { AlertController } from 'ionic-angular';
 /**
  * Generated class for the PedidosPage page.
  *	
@@ -24,7 +24,8 @@ export class PedidosPage {
   constructor(public navCtrl: NavController,
              public navParams: NavParams,
              public Pedidos:PedidosProvider,
-             private modalCtrl: ModalController) {
+             private modalCtrl: ModalController,
+             public alertCtrl: AlertController) {
     this.mesa = this.navParams.get("mesa");
     this.nmesa = this.mesa.id;
     console.log(this.nmesa);
@@ -48,10 +49,34 @@ export class PedidosPage {
 
   }
 
-
+alerta() {
+  let alert = this.alertCtrl.create({
+    title: '¿Estas seguro?',
+    message: 'Al aceptar,se eliminaran todos los pedidos de la mesa',
+    buttons: [
+      {
+        text: 'Cancelar',
+        role: 'cancel',
+        handler: () => {
+          console.log('jaja culio el vato xd');
+        }
+      },
+      {
+        text: 'Aceptar',
+        handler: () => {
+          console.log('Acepto elimnar todo alv');
+        }
+      }
+    ]
+  });
+  alert.present();
+}
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad PedidosPage');
+     this.Pedidos.index(this.nmesa).subscribe(
+      (data) => {this.pedidos = data},
+       (error) =>{console.log(error)}
+       );
   }
 borrarProducto(producto:any,idx:number){
   this.pedidos.splice(idx,1);

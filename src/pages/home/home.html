@@ -21,7 +21,7 @@
 <ion-refresher (ionRefresh)="doRefresh($event)">
     <ion-refresher-content></ion-refresher-content>
   </ion-refresher>
-  <h1 text-center class="text-white" >Inicio</h1>
+  <h1 text-center class="text-white" >Menu</h1>
  <ion-card *ngFor="let pelicula of peliculas"
   (click)="irPagina(pelicula)">
     <img src="https://www.chikavi.com/{{pelicula.imagen}}"/>

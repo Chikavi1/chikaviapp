@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import 'rxjs/Rx'
+
 /*
   Generated class for the HomeProvider provider.
 
@@ -36,6 +37,8 @@ baseUrl:string = "https://www.chikavi.com/api/";
 
 }
 
+
+
   post(data){
 
     
@@ -57,6 +60,8 @@ baseUrl:string = "https://www.chikavi.com/api/";
       });
   });
   }
+
+
 
 
 }

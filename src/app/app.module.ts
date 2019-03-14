@@ -19,6 +19,9 @@ import { EstadisticasProvider } from '../providers/estadisticas/estadisticas';
 import { MesasPage} from '../pages/mesas/mesas';
 import { ModalPage} from '../pages/modal/modal';
 
+import { SelectSearchableModule } from 'ionic-select-searchable';
+import { ProductsProvider } from '../providers/products/products';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -35,7 +38,8 @@ import { ModalPage} from '../pages/modal/modal';
     BrowserModule,
     HttpClientModule,
     IonicModule.forRoot(MyApp),
-    ChartsModule
+    ChartsModule,
+    SelectSearchableModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -56,7 +60,8 @@ import { ModalPage} from '../pages/modal/modal';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     HomeProvider,
     PedidosProvider,
-    EstadisticasProvider
+    EstadisticasProvider,
+    ProductsProvider
   ]
 })
 export class AppModule {}

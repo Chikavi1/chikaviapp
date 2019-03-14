@@ -1,36 +1,54 @@
 
+
+
+
+
+
+
+
 <ion-header>
   <ion-navbar color="fondo-cut">
-  	<ion-buttons>
-  		<button ion-button 
-  				(click)="cerrar()">
-  			Cerrar			
-  		</button>
-  	</ion-buttons>
+    <ion-buttons>
+      <button ion-button 
+          (click)="cerrar()">
+        Cerrar      
+      </button>
+    </ion-buttons>
     <ion-title>Agregar Producto</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding style="background: #17202f;">
 
-	<ion-list>
-		<ion-item style="background: #17202f;color:white;">
-			<ion-label color="white" floating>Cantidad</ion-label>
-    		<ion-input type="number" [(ngModel)]="inputValue1" ></ion-input>
-  		</ion-item>
+  <ion-list>
+    <ion-item style="background: #17202f;color:white;">
+      <ion-label color="white" floating>Cantidad</ion-label>
+        <ion-input type="number" [(ngModel)]="inputValue1" ></ion-input>
+      </ion-item>
+<ion-item style="background: #17202f;color:white;" >
+  <ion-label>Selecciona producto</ion-label>
+  <select-searchable
+  item-content
+  [(ngModel)]="user"
+  [items]="data"
+  itemValueField="id"
+  itemTextField="nombre"
+  [canSearch]="true"
+  (onChange)="userChanged($event)"
+  >
+  </select-searchable>
+</ion-item>
 
-  		<ion-item style="background: #17202f;color:white;">
-   			<ion-label color="white" floating>Ingresa el nombre</ion-label>
-    		<ion-input [(ngModel)]="inputValue2"></ion-input>
-  		</ion-item>
+  
 
 
-	</ion-list>
+  </ion-list>
 </ion-content>
 <ion-footer no-shadow >
-  <ion-toolbar position="bottom">
-   <ion-row style="background: #17202f !important;">
-  
+  <ion-toolbar position="bottom" color="fondo-cut">
+
+   
+   <ion-row >
   <ion-col col-6>
     <button 
           ion-button 
@@ -49,7 +67,7 @@
           class="my-width" 
           (click)="cerrar_con_parametros()"
           large >
-      <b>Registrar pedido</b>
+      <b>Registrar</b>
     </button>
   </ion-col>
 
