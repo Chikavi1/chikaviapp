@@ -66,7 +66,8 @@
           color="secondary" 
           class="my-width" 
           (click)="cerrar_con_parametros()"
-          large >
+          large 
+          [disabled] ="inputValue1 < 1 ">
       <b>Registrar</b>
     </button>
   </ion-col>

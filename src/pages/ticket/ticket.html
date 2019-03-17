@@ -1,0 +1,30 @@
+<!--
+  Generated template for the TicketPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.css">
+
+	
+<ion-header class="animated 3s zoomInDown">
+  <ion-navbar color="fondo-cut">
+    <ion-buttons>
+      <button ion-button 
+          (click)="cerrar()">
+        Cerrar      
+      </button>
+    </ion-buttons>
+    <ion-title>Ticket</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="animated 3s zoomInDown" >
+	<h1 text-center style="color:green"  >¡Venta finalizada!</h1>
+	<img src="assets/imgs/check.png" alt="" width="50"  align-items-center >
+	<div text-center style="color:white;">
+		<p>El codigo de tu compra es el siguiente</p>
+		<h2>{{ codigo}}</h2>
+	</div>
+</ion-content>
+

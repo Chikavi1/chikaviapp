@@ -12,7 +12,7 @@ import { ProductsProvider } from '../../providers/products/products';
 export class ModalPage {
  @ViewChild('myselect') selectComponent: SelectSearchableComponent; 
 
-	inputValue1: number;
+	inputValue1: number = 0;
 	numeroMesa;
   data = [];
   seleccion; 
@@ -58,7 +58,7 @@ export class ModalPage {
   cerrar_con_parametros(){
 
   	let data = {
-  		folio: 456,
+  		folio: this.numeroMesa,
   		cantidad: this.inputValue1,
   		mesa: this.numeroMesa,
   		status: 0,

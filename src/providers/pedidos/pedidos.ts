@@ -24,7 +24,8 @@ baseUrl:string = "http://127.0.0.1:8000/api/";
       "id": data
     }
 
-    console.log(datos);
+
+
 
     return new Promise((resolve, reject) => {
     this.http.post(this.baseUrl+'ventas/delete', datos)
@@ -37,7 +38,10 @@ baseUrl:string = "http://127.0.0.1:8000/api/";
 
 }
 
-
+eliminarTodo(folio){
+  console.log("eliminado.....");
+  return this.http.get(this.baseUrl+"deleteAll?folio="+1 );
+  }
 
   post(data){
 

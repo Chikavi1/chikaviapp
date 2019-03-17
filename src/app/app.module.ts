@@ -18,7 +18,7 @@ import { PedidosProvider } from '../providers/pedidos/pedidos';
 import { EstadisticasProvider } from '../providers/estadisticas/estadisticas';
 import { MesasPage} from '../pages/mesas/mesas';
 import { ModalPage} from '../pages/modal/modal';
-
+import { TicketPage} from '../pages/ticket/ticket';
 import { SelectSearchableModule } from 'ionic-select-searchable';
 import { ProductsProvider } from '../providers/products/products';
 
@@ -31,7 +31,8 @@ import { ProductsProvider } from '../providers/products/products';
     EstadisticasPage,
     PedidosPage,
     MesasPage,
-    ModalPage
+    ModalPage,
+    TicketPage
 
   ],
   imports: [
@@ -50,7 +51,8 @@ import { ProductsProvider } from '../providers/products/products';
     EstadisticasPage,
     PedidosPage,
     MesasPage,
-    ModalPage
+    ModalPage,
+    TicketPage
 
   ],
   providers: [

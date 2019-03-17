@@ -63,14 +63,14 @@
   <ion-toolbar position="bottom" color="fondo-cut">
      <ion-row>
       <ion-col col-12>
-       <h2 text-right style="color:green">Total: 1220</h2>
+       <h2 text-right style="color:green">Total: {{total}}</h2>
       </ion-col>
     </ion-row>
 
    <ion-row>
      <ion-col col-6>
-    <button ion-button color="danger" class="my-width" large (click)="alerta()">
-      <b>Cancelar</b>
+    <button ion-button color="primary" class="my-width" large (click)="alerta()" [disabled]="pedidos.length < 1">
+      <b>Finalizar</b>
     </button>
   </ion-col>
 
