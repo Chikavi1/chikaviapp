@@ -37,7 +37,9 @@ export class PedidosPage {
         this.pedidos = data;
         let suma = 0;
        for(let pedido of this.pedidos){
-         suma += Number(pedido.precio);
+         if(pedido.status === 0){
+           suma += Number(pedido.precio);
+         }
         } 
         this.total = suma;
       },
@@ -64,6 +66,9 @@ alerta() {
       {
         text: 'Aceptar',
         handler: () => {
+          this.Pedidos.statusMesa(this.nmesa).subscribe(
+            (data) => {console.log("se supone debe funcionar")},
+            (error)=> {console.log("valio verga")});
          this.mostrar_ticket();
         }
       }
@@ -86,7 +91,7 @@ borrarProducto(producto:any,idx:number){
 
 
 mostrar_ticket(){
- let modal = this.modalCtrl.create(TicketPage,{ "numero_mesa" : this.nmesa });
+ let modal = this.modalCtrl.create(TicketPage,{ "total" : this.total });
   modal.present();
   
 }

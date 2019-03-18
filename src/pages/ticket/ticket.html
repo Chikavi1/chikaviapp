@@ -24,7 +24,11 @@
 	<img src="assets/imgs/check.png" alt="" width="50"  align-items-center >
 	<div text-center style="color:white;">
 		<p>El codigo de tu compra es el siguiente</p>
-		<h2>{{ codigo}}</h2>
+		<ngx-qrcode [qrc-value]="createdCode" style="zoom:3.0;"></ngx-qrcode>
+		<h2>{{ token }}</h2>	
+		<h1 style="color:green;">$ {{total}}</h1>
+		<p>Mesero : {{ mesero}}</p>
 	</div>
+	<button ion-button block (click)="aceptar()">Aceptar</button>
 </ion-content>
 

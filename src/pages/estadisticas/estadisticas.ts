@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams,AlertController } from 'ionic-angular';
 import { EstadisticasProvider } from '../../providers/estadisticas/estadisticas';
 /**
  * Generated class for the EstadisticasPage page.
@@ -22,7 +22,8 @@ export class EstadisticasPage {
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
-              public Estadisticas: EstadisticasProvider) {
+              public Estadisticas: EstadisticasProvider,
+              public alertCtrl: AlertController) {
     this.Estadisticas.index().subscribe(
        (data) => {this.datos = data,
                  this.pizza = data[0].pizza,
@@ -34,11 +35,32 @@ export class EstadisticasPage {
 
   }
 
+alerta() {
+  let alert = this.alertCtrl.create({
+    title: 'inicia sesion',
+    message: 'Debes Iniciar sesion para poder entrar aqui.',
+    buttons: [
+      {
+        text: 'Aceptar',
+        handler: () => {
+         
+        }
+      }
+    ]
+  });
+  alert.present();
+}
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad EstadisticasPage');
+   ionViewCanEnter(){
+    if(localStorage.getItem("email")){
+      return true;
+    }else{
+      this.alerta();
+      return false;
+    }
   }
 
+  
   public doughnutChartLabels:string[] = ['pizza', 'cervezas', 'alitas'];
 
 public doughnutChartType:string = 'doughnut';

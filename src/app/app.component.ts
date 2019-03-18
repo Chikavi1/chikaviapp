@@ -7,6 +7,9 @@ import { timer } from 'rxjs/observable/timer';
 import { HomePage } from '../pages/home/home';
 import { EstadisticasPage } from '../pages/estadisticas/estadisticas';
 import { MesasPage} from '../pages/mesas/mesas';
+import { AyudaPage } from '../pages/ayuda/ayuda';
+import { TerminosPage } from '../pages/terminos/terminos';
+
 @Component({
   templateUrl: 'app.html'
 })
@@ -24,7 +27,9 @@ export class MyApp {
     this.pages = [
       { title: 'Inicio', component: HomePage },
       { title: 'Pedidos', component: MesasPage },
-      { title: 'Estadisticas', component: EstadisticasPage}
+      { title: 'Estadisticas', component: EstadisticasPage},
+      { title: 'Ayuda', component: AyudaPage},
+      { title: 'Terminos y condiciones ', component: TerminosPage}
     ];
 
   }

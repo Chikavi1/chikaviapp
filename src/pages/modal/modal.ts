@@ -62,7 +62,7 @@ export class ModalPage {
   		cantidad: this.inputValue1,
   		mesa: this.numeroMesa,
   		status: 0,
-  		vendedor: "el kiosko",
+  		vendedor: localStorage.getItem("nombreMesero"),
   		nombre: this.seleccion.value.nombre,
   		products_id: 1,
   		precio : (this.seleccion.value.precio * this.inputValue1)

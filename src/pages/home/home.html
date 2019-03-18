@@ -1,10 +1,32 @@
-<ion-header>
-  <ion-navbar color="fondo-cut">
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title></ion-title>
+<ion-header  no-border>
+  <ion-navbar color="fondo-cut" >
+ 
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+       <button ion-button menuToggle >
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      </ion-col>
+    
+      <ion-col>
+       
+   <ion-buttons>
+     
+      <button ion-button icon-only (click)="goProfile()" float-end >
+        <ion-icon name="contact"></ion-icon>
+      </button>
+   </ion-buttons>
+      </ion-col>
+    </ion-row>
+</ion-grid>
+
+      
+
+
+
   </ion-navbar>
+
 </ion-header>
 
 <ion-content class="card-background-page "  >
@@ -24,7 +46,7 @@
   <h1 text-center class="text-white" >Menu</h1>
  <ion-card *ngFor="let product of products"
   (click)="irPagina(product)">
-    <img src="http://127.0.0.1:8000/{{product.imagen}}"/>
+    <img src="https://www.chikavi.com/{{product.imagen}}"/>
     <div class="card-title">{{product.nombre}}</div>
     <div class="card-subtitle">{{product.year}}</div>
   </ion-card>

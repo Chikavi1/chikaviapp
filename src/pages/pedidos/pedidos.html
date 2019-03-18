@@ -22,9 +22,9 @@
 
   <ion-item-sliding *ngFor="let pedido of pedidos;let i = index">
     
-  
 
-    <ion-item style="background: #17202f;color:white;border: 2px solid white;">
+    
+    <ion-item  *ngIf=" pedido.status == 0" style="background: #17202f;color:white;border: 2px solid white;">
       <ion-grid>
         <ion-row>
           <ion-col>
@@ -39,7 +39,7 @@
         </ion-row>
       </ion-grid>
     </ion-item>
-      
+
         
         
 

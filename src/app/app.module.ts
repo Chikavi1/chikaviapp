@@ -21,6 +21,10 @@ import { ModalPage} from '../pages/modal/modal';
 import { TicketPage} from '../pages/ticket/ticket';
 import { SelectSearchableModule } from 'ionic-select-searchable';
 import { ProductsProvider } from '../providers/products/products';
+import { AyudaPage} from '../pages/ayuda/ayuda';
+import { TerminosPage} from '../pages/terminos/terminos';
+import { LoginPage } from '../pages/login/login';
+import { NgxQRCodeModule } from 'ngx-qrcode2';
 
 @NgModule({
   declarations: [
@@ -32,7 +36,10 @@ import { ProductsProvider } from '../providers/products/products';
     PedidosPage,
     MesasPage,
     ModalPage,
-    TicketPage
+    TicketPage,
+    AyudaPage,
+    TerminosPage,
+    LoginPage
 
   ],
   imports: [
@@ -40,7 +47,8 @@ import { ProductsProvider } from '../providers/products/products';
     HttpClientModule,
     IonicModule.forRoot(MyApp),
     ChartsModule,
-    SelectSearchableModule
+    SelectSearchableModule,
+    NgxQRCodeModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -52,7 +60,10 @@ import { ProductsProvider } from '../providers/products/products';
     PedidosPage,
     MesasPage,
     ModalPage,
-    TicketPage
+    TicketPage,
+    AyudaPage,
+    TerminosPage,
+    LoginPage
 
   ],
   providers: [

@@ -14,11 +14,16 @@ export class PedidosProvider {
   constructor(public http: HttpClient) {
   }
 datos;
-baseUrl:string = "http://127.0.0.1:8000/api/";
+baseUrl:string = "https://www.chikavi.com/api/";
 
   index(mesa):any{
   	return this.http.get(this.baseUrl+"ventasmesa?mesa="+mesa);
   }
+
+  statusMesa(nmesa):any{
+  return this.http.get(this.baseUrl+"updateStatus?folio="+nmesa);
+}
+
   eliminarProducto(data):any{
  let datos = {
       "id": data

@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController,ToastController,ModalController  } from 'ionic-angular';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
-import { ToastController } from 'ionic-angular';
 import { OBJETOS } from '../../data/data.objetos';
 
 import { ProductPage } from '../product/product';
 import { HomeProvider } from '../../providers/home/home';
+import { LoginPage } from '../login/login';
 import { AlertController } from 'ionic-angular';
 
 
@@ -24,7 +24,8 @@ export class HomePage {
 		  	private barcodeScanner: BarcodeScanner,
 		  	private toastCtrl: ToastController,
         public Home: HomeProvider,
-        public alertCtrl: AlertController){
+        public alertCtrl: AlertController,
+       public modalCtrl: ModalController){
   	//7this.objetos = OBJETOS.slice(0);
   	 //this.initializeItems();
      this.Home.index().subscribe(
@@ -33,15 +34,7 @@ export class HomePage {
        );
   }
 
-  scan(){
-  	this.barcodeScanner.scan().then(barcodeData => {
-  		this.mostrarError("Buscando...");
-  		this.getItems(barcodeData.text);
-	}).catch(err => {
-	    console.log('Error', err);
-	    this.mostrarError("Error: " + err)
-	});
-	  }
+
 
  initializeItems() {
     this.items = OBJETOS.slice(0);
@@ -62,9 +55,10 @@ getItems(ev: string) {
     }
   }
 
-buscar(resultado:string){
-	this.texto = resultado;
-}
+goProfile(){
+    const modal = this.modalCtrl.create(LoginPage);
+    modal.present();
+  }
 
 mostrarError( mensaje : string ){
 	 let toast = this.toastCtrl.create({
