@@ -21,6 +21,7 @@ mesas:any = [];
 
   constructor(public navCtrl: NavController, public navParams: NavParams,public alertCtrl: AlertController) {
   	this.mesas = MESAS.slice(0);
+    
   }
 
   ionViewDidLoad() {

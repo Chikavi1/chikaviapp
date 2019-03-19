@@ -19,6 +19,7 @@ export class HomePage {
 
   products :any[];
 
+  
 
   constructor(public navCtrl: NavController,
 		  	private barcodeScanner: BarcodeScanner,

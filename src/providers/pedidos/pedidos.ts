@@ -20,8 +20,8 @@ baseUrl:string = "https://www.chikavi.com/api/";
   	return this.http.get(this.baseUrl+"ventasmesa?mesa="+mesa);
   }
 
-  statusMesa(nmesa):any{
-  return this.http.get(this.baseUrl+"updateStatus?folio="+nmesa);
+  statusMesa(folio):any{
+  return this.http.get(this.baseUrl+"updateStatus?folio="+folio);
 }
 
   eliminarProducto(data):any{

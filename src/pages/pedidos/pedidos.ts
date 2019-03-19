@@ -29,7 +29,13 @@ export class PedidosPage {
              public alertCtrl: AlertController) {
     this.mesa = this.navParams.get("mesa");
     this.nmesa = this.mesa.id;
-    this.folio = this.nmesa;
+    this.folio = this.numeroAleatorio(100,8000);
+
+
+     localStorage.setItem("mesa"+this.nmesa,this.folio);
+
+
+
     console.log("el folio es",this.folio);
 
    	 this.Pedidos.index(this.nmesa).subscribe(
@@ -52,6 +58,11 @@ export class PedidosPage {
   }
  
 
+
+  numeroAleatorio(min, max):number {
+  return Math.round(Math.random() * (max - min) + min);
+}
+
 alerta() {
   let alert = this.alertCtrl.create({
     title: '¿Estas seguro?',
@@ -66,7 +77,7 @@ alerta() {
       {
         text: 'Aceptar',
         handler: () => {
-          this.Pedidos.statusMesa(this.nmesa).subscribe(
+          this.Pedidos.statusMesa(this.folio).subscribe(
             (data) => {console.log("se supone debe funcionar")},
             (error)=> {console.log("valio verga")});
          this.mostrar_ticket();

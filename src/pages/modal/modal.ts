@@ -58,7 +58,7 @@ export class ModalPage {
   cerrar_con_parametros(){
 
   	let data = {
-  		folio: this.numeroMesa,
+  		folio: localStorage.getItem("mesa"+this.numeroMesa),
   		cantidad: this.inputValue1,
   		mesa: this.numeroMesa,
   		status: 0,
