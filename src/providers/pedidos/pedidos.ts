@@ -33,7 +33,7 @@ baseUrl:string = "https://www.chikavi.com/api/";
 
 
     return new Promise((resolve, reject) => {
-    this.http.post(this.baseUrl+'ventas/delete', datos)
+    this.http.get(this.baseUrl+'ventas/delete?id='+data)
       .subscribe(res => {
         resolve(res);
       }, (err) => {
@@ -50,24 +50,24 @@ eliminarTodo(folio){
 
   post(data){
 
-    
-  // 	let data = {
-  //   	"folio":"1234",
-  //   	"cantidad":"3",
-  //   	"vendedor":"luis rojas",
-		// "nombre":"pizza",
-		// "products_id":"3",
-		// "precio":"220"}
-
+    let folio = data.folio;
+    let cantidad = data.cantidad;
+    let vendedor = data.vendedor;
+    let nombre = data.nombre;
+    let products_id = data.products_id;
+    let precio = data.precio;
+    let mesa = data.mesa;
+console.log(data);
 
   	return new Promise((resolve, reject) => {
-    this.http.post(this.baseUrl+'createVenta', data)
+    this.http.get(this.baseUrl+"createVenta?folio="+folio+"&cantidad="+cantidad+"&vendedor="+vendedor+"&nombre="+nombre+"&products_id="
+      +products_id+"&precio="+precio+"&mesa="+mesa+"&status="+0)
       .subscribe(res => {
         resolve(res);
       }, (err) => {
         reject(err);
       });
-  });
+   });
   }
 
 

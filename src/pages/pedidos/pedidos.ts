@@ -116,11 +116,7 @@ mostrar_modal(){
 }
 
  generarPedido() {
-    this.Pedidos.post(this.data).then((result) => {
-    console.log(result);
-  }, (err) => {
-    console.log(err);
-  });
+    this.Pedidos.post(this.data);
 }
 
 doRefresh(refresher) {

@@ -68,11 +68,7 @@ export class ModalPage {
   		precio : (this.seleccion.value.precio * this.inputValue1)
   	};
 
-this.Pedidos.post(data).then((result) => {
-    console.log(result);
-  }, (err) => {
-    console.log(err);
-  });
+this.Pedidos.post(data);
   	this.viewCtrl.dismiss(data);
   }
 
